@@ -43,6 +43,25 @@ User user = new User.Builder()
                 .setAge(30)
                 .build();
 ```
+Hashcode
+```java
+public class Person {
+  private String firstName;
+  private String lastName;
+  private int age;
+
+  // Constructors, getters, setters
+
+  @Override
+  public int hashCode() {
+    int result = 17;
+    result = 31 * result + firstName.hashCode();
+    result = 31 * result + lastName.hashCode();
+    result = 31 * result + age;
+    return result;
+  }
+}
+```
 ...
 ```java
 
