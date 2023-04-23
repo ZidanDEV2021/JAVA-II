@@ -29,6 +29,24 @@ public class Person implements Serializable {
 @Setter
 public class Teacher extends Person {
 
+@OneToMany(mappedBy = "teacher", targetEntity = Subject.class)
+	private Set<Subject> subjects;
+...
+
+public class Subject implements Serializable {
+
+@ManyToMany(targetEntity = Student.class,mappedBy = "subjects")
+    private Set<Student> students;
+
+    @ManyToOne
+    private Teacher teacher;
+
+
+...
+public class Student extends Person {
+@ManyToMany(targetEntity = Subject.class)
+    private Set<Subject> subjects;
+...
 
 ...
 
