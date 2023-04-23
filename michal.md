@@ -22,6 +22,15 @@ public class Person implements Serializable {
 ...
 
 
+@Entity
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+public class Teacher extends Person {
+
+
+...
 
 
 import java.util.*;
