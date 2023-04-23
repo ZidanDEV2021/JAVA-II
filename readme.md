@@ -1,3 +1,49 @@
+Builder
+```java
+public class User {
+  private String firstName;
+  private String lastName;
+  private int age;
+
+  public User(String firstName, String lastName, int age) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+  }
+
+  public static class Builder {
+    private String firstName;
+    private String lastName;
+    private int age;
+
+    public Builder setFirstName(String firstName) {
+      this.firstName = firstName;
+      return this;
+    }
+
+    public Builder setLastName(String lastName) {
+      this.lastName = lastName;
+      return this;
+    }
+
+    public Builder setAge(int age) {
+      this.age = age;
+      return this;
+    }
+
+    public User build() {
+      return new User(firstName, lastName, age);
+    }
+  }
+}
+
+User user = new User.Builder()
+                .setFirstName("John")
+                .setLastName("Doe")
+                .setAge(30)
+                .build();
+```
+...
 ```java
 
 import java.io.Serializable;
