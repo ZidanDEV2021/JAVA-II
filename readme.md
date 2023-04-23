@@ -18,10 +18,10 @@ public class Person implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     
-
+```
 ...
 
-
+```java
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
@@ -31,8 +31,9 @@ public class Teacher extends Person {
 
 @OneToMany(mappedBy = "teacher", targetEntity = Subject.class)
 	private Set<Subject> subjects;
+```
 ...
-
+```java
 public class Subject implements Serializable {
 
 @ManyToMany(targetEntity = Student.class,mappedBy = "subjects")
@@ -41,16 +42,18 @@ public class Subject implements Serializable {
     @ManyToOne
     private Teacher teacher;
 
-
+```
 ...
+```java
 public class Student extends Person {
 @ManyToMany(targetEntity = Subject.class)
     private Set<Subject> subjects;
+```
+
+
 ...
 
-...
-
-
+```java
 import java.util.*;
 import jakarta.persistence.*;
 import jakarta.persistence.criteria.CriteriaBuilder;
@@ -348,7 +351,7 @@ public class DemoJPA {
 
 	}
 
-
+```
 
 
 ```
