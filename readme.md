@@ -62,6 +62,20 @@ public class Person {
   }
 }
 ```
+Log4j
+```java
+import org.apache.log4j.Logger;
+
+public class MyClass {
+  private static final Logger logger = Logger.getLogger(MyClass.class);
+
+  public void doSomething() {
+    logger.info("Starting doSomething method");
+    // ... do some work
+    logger.info("Finished doSomething method");
+  }
+}
+```
 ...
 ```java
 
